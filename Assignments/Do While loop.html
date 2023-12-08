@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+
+  <div class="home">
+    <a href="https://dre-portfolio.github.io/CS-1130/"><h1>HOME</h1></a> 
+    </div>
+
+<div class="row">
+  <div class="col">
+<h1>Print N Natural Numbers using a Do While Loop</h1>
+<br>
+<p class="inputs">
+<label for="nlimit">Input a value for n:</label>
+<input id="nlimit" type="number"></input>
+<button onclick="ShowNumbers()">Show Numbers</button>
+</p>
+<h3 id="ntitle"></h3>
+<p id="nnumbers"></p>
+
+</div>
+</div>
+
+
+<script>
+function ShowNumbers() {
+
+    var nlimit,i,ntext;
+
+    nlimit = document.getElementById("nlimit").value;
+
+    ntext="";
+    i=1;
+
+   do {
+         ntext += i+" ";
+         i++;
+    } while (i <= nlimit);
+
+    console.log(nlimit);
+    console.log(ntext);
+
+    document.getElementById("ntitle").innerHTML=
+      "The first "+nlimit+" natural numbers are:";
+
+    document.getElementById("nnumbers").innerHTML=
+       ntext;
+
+
+
+}    
+
+</script>
+
+<style>
+
+
+@import url('https://fonts.googleapis.com/css2?family=Archivo+Black&family=Poppins:wght@100;200;300;400;500;600;700;800;900&family=Roboto:wght@400;500;700;900&display=swap');
+  * {
+    padding: 0;
+    margin: 0;
+    font-family: "Poppins";
+}
+
+.home {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.home a {
+  text-decoration: none;
+  color: #111827;
+}
+
+.home a:hover {
+  text-decoration: underline;
+  transition-duration: .2s;
+}
+
+.home h1 {
+  padding-inline: 15px;
+}
+
+.row {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 15rem;
+}
+
+.col {
+  display: flex;
+  flex-direction: column;
+  width: 45vw;
+  align-items: center;
+  border: solid #111827;
+  padding: 10px;
+}
+
+.inputs {
+  flex-direction: column;
+  display: flex;
+}
+
+
+</style>
+
+</body>
+</html>

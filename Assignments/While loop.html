@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+
+
+
+<div class="row">
+  <div class="col">
+<h1>Print N Natural Numbers using a While Loop</h1>
+<br>
+<p class="inputs">
+<label for="nlimit">Input a value for n:</label>
+<input id="nlimit" type="number"></input>
+<button onclick="ShowNumbers()">Show Numbers</button>
+</p>
+<h3 id="ntitle"></h3>
+<p id="nnumbers"></p>
+
+  </div>
+</div>
+
+<script>
+function ShowNumbers() {
+
+    var nlimit,i,ntext;
+
+    nlimit = document.getElementById("nlimit").value;
+
+    ntext="";
+    i=1;
+
+    while (i <= nlimit) {
+         ntext += i+" ";
+         i++;
+    }
+
+    console.log(nlimit);
+    console.log(ntext);
+
+    document.getElementById("ntitle").innerHTML=
+      "The first "+nlimit+" natural numbers are:";
+
+    document.getElementById("nnumbers").innerHTML=
+       ntext;
+
+
+
+}    
+
+</script>
+
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Archivo+Black&family=Poppins:wght@100;200;300;400;500;600;700;800;900&family=Roboto:wght@400;500;700;900&display=swap');
+  * {
+    font-family: "Poppins";
+}
+
+.inputs {
+  display: flex;
+}
+
+a {
+   text-decoration: none;
+   color: black;
+   font-weight: 900;
+ }
+
+ a:hover {
+   text-decoration: underline
+ }
+
+ button {
+   margin-left: 1rem;
+ }
+
+</style>
+<a href="https://dre-portfolio.github.io/CS-1130/">Back to home</a> 
+
+</body>
+
+</html>

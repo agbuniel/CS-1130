@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html>
+
+<body>
+
+
+
+  <div class="row">
+    <div class="col">
+      <h1>Java Script Arrays using Random numbers</h1>
+      <p>Generate Random Numbers</p>
+
+      <p class="inputs">
+
+        <label for="nnumbers">How many numbers to generate?</label>
+        <br>
+        <input id="nnumbers" name="nnumbers" type="number"></input>
+        <br>
+        <button onclick="GenNumbers()">Generate the Numbers</button>
+      </p>
+
+      <p id="rnumbers"></p>
+      <button onclick="SortNumbers()">Sort the Numbers</button>
+      <p id="sortednumbers"></p>
+
+      <button onclick="ReverseNumbers()">Reverse the Numbers</button>
+      <p id="reversenumbers"></p>
+
+    </div>
+  </div>
+
+  <style>
+  @import url('https://fonts.googleapis.com/css2?family=Archivo+Black&family=Poppins:wght@100;200;300;400;500;600;700;800;900&family=Roboto:wght@400;500;700;900&display=swap');
+    * {
+      font-family: "Poppins";
+  }
+  
+  .inputs {
+    display: flex;
+  }
+ 
+  a {
+     text-decoration: none;
+     color: black;
+     font-weight: 900;
+   }
+ 
+   a:hover {
+     text-decoration: underline
+   }
+ 
+   button {
+     margin-left: 1rem;
+   }
+ 
+ </style>
+ <a href="https://dre-portfolio.github.io/CS-1130/">Back to home</a> 
+  <script>
+    var Anumbers = []; // Global Array
+
+    function GenNumbers() {
+      var nnumbers, n, j, rnumbers;
+
+      nnumbers = document.getElementById("nnumbers").value;
+
+      // generate numbers;
+      Anumbers = [];
+
+      for (j = 0, rnumbers = ""; j < nnumbers; j++) {
+        n = Math.round((Math.random() * 100) + 1);
+
+        rnumbers += n + " ";
+        Anumbers.push(n); // add n to the array Anumbers
+      }
+
+      document.getElementById("rnumbers").innerHTML = rnumbers;
+    }
+
+    function SortNumbers() {
+      var rnumbers, j;
+
+      Anumbers.sort(function (a, b) {
+        return a - b
+      });
+
+      rnumbers = "";
+
+      for (var i = 0; i < Anumbers.length; i++) {
+        rnumbers += Anumbers[i] + " ";
+      }
+
+      document.getElementById("sortednumbers").innerHTML = rnumbers;
+    }
+
+    function ReverseNumbers() {
+      var rnumbers, j;
+
+      Anumbers.reverse();
+
+      rnumbers = "";
+
+      for (var i = 0; i < Anumbers.length; i++) {
+        rnumbers += Anumbers[i] + " ";
+      }
+
+      document.getElementById("reversenumbers").innerHTML = rnumbers;
+    }
+  </script>
+
+</body>
+
+</html>

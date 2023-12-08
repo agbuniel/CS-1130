@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+
+<html>
+<body>
+
+<div class="home">
+
+</div>
+
+<div class="row">
+  <div class="col">
+<h1>ADD TWO NUMBERS V1</h1>
+<button onclick="clickbtn()">Compute the sum</button>
+</div>
+</div>
+
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Archivo+Black&family=Poppins:wght@100;200;300;400;500;600;700;800;900&family=Roboto:wght@400;500;700;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Archivo+Black&family=Poppins:wght@100;200;300;400;500;600;700;800;900&family=Roboto+Condensed:wght@300&family=Roboto:wght@400;500;700;900&display=swap');
+  * {
+    font-family: "Poppins";
+  }
+
+  a {
+    text-decoration: none;
+    color: black;
+    font-weight: 900;
+  }
+
+  a:hover {
+    text-decoration: underline
+  }
+
+</style>
+<a href="https://dre-portfolio.github.io/CS-1130/">Back to home</a> 
+
+<script>
+function clickbtn()
+
+{
+
+  let a='', b='',x=0,y=0;
+
+
+
+   a=prompt('The first number:');
+
+   b=prompt('The second number:');
+
+
+
+   x=parseInt(a);
+
+   y=parseInt(b);
+
+  
+
+   let z=x+y;
+
+
+
+   document.write('<h2>The sum is:'+z+'</h2> <br>')
+
+}
+
+
+</script>
+
+
+</body>
+</html>

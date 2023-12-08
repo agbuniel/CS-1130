@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Income Tax Calculator</title>
+</head>
+<body>
+
+<h1>Income Tax Calculator</h1>
+
+<p>
+  <label for="income">Enter Taxable Income:</label>
+  <input type="number" id="income">
+</p>
+
+<button onclick="calculateTax()">Calculate Tax</button>
+
+<p id="result"></p>
+
+<script>
+  function calculateTax() {
+    const income = parseFloat(document.getElementById('income').value);
+    let tax = 0;
+
+    if (income <= 250000) {
+      tax = 0;
+    } else if (income > 250000 && income <= 400000) {
+      tax = (income - 250000) * 0.20;
+    } else if (income > 400000 && income <= 800000) {
+      tax = 30000 + (income - 400000) * 0.25;
+    } else if (income > 800000 && income <= 2000000) {
+      tax = 130000 + (income - 800000) * 0.30;
+    } else if (income > 2000000 && income <= 8000000) {
+      tax = 490000 + (income - 2000000) * 0.32;
+    } else if (income > 8000000) {
+      tax = 2410000 + (income - 8000000) * 0.35;
+    }
+
+    document.getElementById('result').innerHTML = `Income Tax: PHP ${tax.toFixed(2)}`;
+  }
+</script>
+<style>
+  * {
+    font-family: Arial, Helvetica, sans-serif;
+  }
+
+  a {
+    text-decoration: none;
+    color: black;
+    font-weight: 900;
+  }
+
+  a:hover {
+    text-decoration: underline
+  }
+
+</style>
+<a href="https://dre-portfolio.github.io/CS-1130/">Back to home</a> 
+
+
+</body>
+</html>

@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+
+<body>
+
+<div class="row">
+  <div class="col">
+
+  <h1>ADD TWO NUMBERS V3</h1>
+
+  <p class="inputs">
+    <label for="n1">First Number</label>
+    <input id="n1" name="n1" type="number" oninput="computesum()">
+    <label for="n2">Second Number</label>
+    <input id="n2" name="n2" type="number" oninput="computesum()">
+  </p>
+  <br>
+    <label for="sum" id="sumlabel">The sum is:</label>
+    <input id="sum" name="sum" type="number" readonly></input>
+  </p>
+
+    </div>
+  </div>
+
+  <script>
+    function computesum() {
+      var x, y;
+
+      // Retrieve the user input
+      x = document.getElementById("n1").value * 1; // *1 Converts the result to number
+      y = document.getElementById("n2").value * 1; // to avoid having to use parseFloat
+
+      // Compute the sum
+      let z = x + y;
+
+      // Display the result
+      document.getElementById("sumlabel").innerHTML = 'The sum of ' + x + ' and ' + y + ' is:';
+      document.getElementById("sum").value = z;
+    }
+  </script>
+
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Archivo+Black&family=Poppins:wght@100;200;300;400;500;600;700;800;900&family=Roboto:wght@400;500;700;900&display=swap');
+  * {
+    
+    font-family: "Poppins";
+}
+
+
+.inputs {
+  display: flex;
+}
+
+a {
+    text-decoration: none;
+    color: black;
+    font-weight: 900;
+  }
+
+  a:hover {
+    text-decoration: underline
+  }
+
+</style>
+
+<a href="https://dre-portfolio.github.io/CS-1130/">Back to home</a> 
+</body>
+
+</html>

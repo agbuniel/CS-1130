@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+  <div class="row">
+    <div class="col">
+<h1>Grade Computation V1</h1>
+
+<p class="inputs">
+<label for="score">Score</label> 
+<input id="score" name="score" type="number">
+<label for="items">Items</label> 
+<input id="items" name="items" type="number">
+<label for="base">Base</label> 
+<input id="base" name="base" type="number">
+
+<button onclick="computegrade()"> Compute Grade </button>
+
+<h2 id="grade"></h2>
+<h2 id="letterg"></h2>
+</p>
+    </div>
+    </div>
+
+
+
+<script>
+function computegrade()
+{
+  var x,y,z,lg;
+
+  x = document.getElementById("score").value*1;  // Multiply by 1 to convert to number 
+  y = document.getElementById("items").value*1;  // without using parseFloat
+  z = document.getElementById("base").value*1;
+
+  console.log(x);
+  console.logYes;
+  console.log(z);
+    
+   let g=Math.round((x/y)*(100-z)+z); // formula for grade
+  
+   console.log(g);
+
+  // convert to literal grade
+   if (g < 72) {
+      lg = "F";
+   } else if (g>=72 && g<=75) {   // && stands for AND,  || stands for OR
+      lg = "D";
+   } else if (g>=76 && g<=79) {
+      lg = "C";
+   } else if (g>=80 && g<=83) {
+      lg = "C+";
+   } else if (g>=84 && g<=87) {
+      lg = "B";
+   } else if (g>=88 && g<=91) {
+      lg = "B+";
+    } else  {
+      lg = "A";
+  
+   }      
+         
+   
+
+   document.getElementById("grade").innerHTML='The grade for '
+    +x+"/"+y+" using base "+z+" is "+g;
+
+   document.getElementById("letterg").innerHTML='The equivalent is '+lg;    
+
+}
+   
+</script>
+
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Archivo+Black&family=Poppins:wght@100;200;300;400;500;600;700;800;900&family=Roboto:wght@400;500;700;900&display=swap');
+   * {
+     font-family: "Poppins";
+ }
+ 
+ .inputs {
+   display: flex;
+ }
+
+ a {
+    text-decoration: none;
+    color: black;
+    font-weight: 900;
+  }
+
+  a:hover {
+    text-decoration: underline
+  }
+
+  button {
+    margin-left: 1rem;
+  }
+
+</style>
+<a href="https://dre-portfolio.github.io/CS-1130/">Back to home</a> 
+
+ 
+</body>
+</html>

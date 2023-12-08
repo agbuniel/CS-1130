@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ITC WEBSITE</title>
+    <link rel="stylesheet" href="style.css">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' 
+    rel='stylesheet'>
+</head>
+
+<body>
+    
+<video autoplay loop muted plays-inline class="backv">
+    <source src="video.mp4" type="video/mp4">
+</video>
+    
+    
+      
+    
+<!--NAVBAR-->
+
+    <nav class="navbar" id="navbarList">
+        <ul class="nav-links">
+            
+
+            
+            <li class="adding">
+                <a href="#" >Javascript Adding 2 Numbers Examples ▼</a>
+                <ul class="dropdown">
+                    <a href="Assignments/Add 2 Numbers Version 1.html" target="_blank">Add 2 Numbers version #1 - Using Prompts</a>
+                    <a href="Assignments/Add 2 Numbers Version 2.html">Add 2 Numbers version #2 - Using HTML Inputs and Labels</a>
+                    <a href="Assignments/Add 2 Numbers Version 3.html">Add 2 Numbers version #3 - Using Automatic Sum Computation</a>
+                </ul>
+            </li>
+            <li class="computation"><a href="#row2">Javascript Grade Computation Examples  ▼</a>
+                <ul class="dropdown">
+                    <a href="Assignments/Grade Computation Version 1.html">Grade Computation version #1 - Using if else statements</a>
+                    <a href="Assignments/Grade Computation Version 2.html">Grade Computation version #2 - Using Prompts</a>
+                </ul>
+            </li>
+            <li class="eventlistener"><a href="#row2">Javascript EventListeners  ▼</a>
+                <ul class="dropdown">
+                    <a href="Assignments/Add 2 Numbers with Button Event Listener.html">Add 2 Numbers with Button Event Listener</a>
+                    <a href="Assignments/Add 2 Numbers with Input Event Listener.html">Add 2 Numbers with Input Event Listener</a>
+                    <a href="Assignments/Grade Computation with Input Listener (NEW SYNTAX).html">Grade Computation with Input Listener (NEW SYNTAX)</a>
+                </ul>
+            </li>
+            <li class="natural"><a href="#row2">Natural Numbers and Loops  ▼</a>
+                <ul class="dropdown">
+                    <a href="Assignments/While loop.html">Printing Natural Numbers with While loop</a>
+                    <a  href="Assignments/Do While loop.html">Printing Natural Numbers with Do While loop</a>
+                    <a href="Assignments/For loop.html">Printing Natural Numbers with For loop</a>
+                    <a href="Assignments/Random Number Generator.html">Using Arrays, Generating and & Sorting Random Numbers</a>
+                </ul>
+            </li>
+            <li class="shopping"><a href="#row2">Shopping Carts  ▼</a>
+                <ul class="dropdown">
+                    <a href="Assignments/Simple Shopping Cart.html">Version #1 Simple Shopping Cart</a>
+                    <a href="Assignments/Html Tables.html">Version #2 Using and Formatting HTML Tables</a>
+                    <a href="Assignments/Styling Shopping Cart.html">Version #3 Styling Shopping Cart</a>
+                    <a href="Assignments/Shopping Cart.html">Version #5 Shopping Cart</a>
+                </ul>
+            </li>
+            
+        </ul>
+
+        
+    </nav>
+
+<script>
+   // Get all the list items in the navbar
+const navbarItems = document.querySelectorAll('.nav-links > li');
+
+// Function to toggle dropdown
+function toggleDropdown() {
+  const dropdown = this.querySelector('.dropdown');
+  dropdown.style.display = dropdown.style.display === 'block' ? 'none' : 'block';
+}
+
+// Iterate through each navbar item
+navbarItems.forEach(item => {
+  // Add onclick event to each navbar item
+  item.addEventListener('click', toggleDropdown);
+});
+
+</script>
+
+  
+    
+    <section class="header">
+        
+        <h1 class="task">ITC PROJECT</h1>
+        <h1 class="name">Aaron Gallardo Buniel</h1>
+
+    </section>
+<br>
+
+<div class="button-assignments">
+    <div class="conversion-section">
+        <a href="convert.html" ><h3>CONVERSION</h3></a>
+    </div>
+
+    <div class="itc-section">
+        <a href="ITC.html" ><h3>INCOME TAX CALCULATOR</h3></a>
+    </div>
+    
+    <div class="payroll-section">
+        <a href="payroll.html" ><h3>SIMPLE PAYROLL</h3></a>
+    </div>
+
+</div>
+
+
+   
+</body>
+</html>
+

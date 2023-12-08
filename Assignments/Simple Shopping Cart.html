@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+
+<html>
+
+<body onload="initcart()">
+
+
+ 
+
+<div class="row">
+  <div class="col">
+<h1>Simple Shopping Cart</h1>
+
+
+
+<p class="inputs">
+
+<label for="itemdesc">Choose an item:</label>    
+
+<select name="itemdesc" id="itemdesc">
+
+  <option value="sardines">sardines</option>
+
+  <option value="hotdog">hotdog</option>
+
+  <option value="shampoo">shampoo</option>
+
+  <option value="toothpaste">toothpaste</option>
+
+  <option value="noodles">noodles</option>
+
+</select>
+
+<label for="qty">Quantity:</label>
+<input id="qty" name="qty" type="number" onkeyup="computeamount()"></input>
+<label for="price">Unit Price:</label>
+<input id="price" name="price" type="number" onkeyup="computeamount()"></input>
+<label for="amount">Amount:</label>
+<input id="amount" name="amount" type="number" readonly></input>
+<button onclick="addtocart()">Add to Cart</button>
+
+</p>
+<br>
+<p class="inputs">
+<label for="items">Cart Items:</label>
+<input id="items" name="items" type="number" readonly></input>
+<button onclick="initcart()">Clear Cart</button><button onclick="showcart()">Show Cart</button>
+
+</p>
+
+<p id="cartheader"></p>
+<p id="cart"></p>
+<br>
+<p id="cartfooter"></p>
+
+  </div>
+</div>
+
+<script>
+
+
+
+
+
+    // Initialize cart      
+
+    function initcart(){
+
+        cart=[];
+
+        document.getElementById("items").value=cart.length;
+
+        document.getElementById("cartheader").innerHTML="";
+
+        document.getElementById("cart").innerHTML="";
+
+        document.getElementById("cartfooter").innerHTML="";
+
+            
+
+    }
+
+
+
+    // Add item to cart
+
+    function addtocart(){
+
+         
+
+         var ci = {
+
+             "item": "1",
+
+             "price": 0,
+
+             "qty": 1,
+
+            "itemamount" : function itemamount(){
+
+                 return Math.round(this.price*this.qty*100)/100;  
+
+               }
+
+            };
+
+
+
+          ci.item=document.getElementById("itemdesc").value;
+
+          ci.qty=document.getElementById("qty").value;
+
+          ci.price=document.getElementById("price").value;
+
+
+
+          console.log(ci.item);
+
+          console.log(ci.qty);
+
+          console.log(ci.price);
+
+
+
+
+
+           cart.push(ci);
+
+          //cart[cart.length]=cartitem;
+
+
+
+          console.log(cart.length);
+
+          document.getElementById("items").value=cart.length;
+
+
+
+    }
+
+
+
+    // Compute Amount per Item
+
+    function computeamount() {
+
+          var q,p,q;
+
+          q = document.getElementById("qty").value*1;
+
+          p = document.getElementById("price").value*1;
+
+
+
+          a = Math.round(q*p*100)/100;  // rounds off to 2 decimal places
+
+
+
+          console.log(a);
+
+
+
+          document.getElementById("amount").value=a;
+
+        
+
+    }    
+
+    
+
+    // Show the contents of the cart
+
+    function showcart(){
+
+
+
+        var i,l,carttext,totalamount;
+
+
+
+        l = cart.length;
+
+        
+
+        for (i=0,totalamount=0,carttext="";i<l;i++){
+
+            
+
+            carttext+="<p> "
+
+               +cart[i].item+"  "
+
+               +cart[i].qty+"   "
+
+               +cart[i].price+"   "
+
+               +cart[i].itemamount()+" "
+
+               +" </p>";
+
+
+
+            totalamount+=cart[i].itemamount();
+
+          
+
+
+
+        }
+
+        
+
+        console.log(carttext);
+
+        document.getElementById("cartheader").innerHTML=
+
+          "Item".padEnd(30,' ')
+
+          +"Qty".padStart(10,' ')
+
+          +"Price".padStart(15,' ')
+
+          +"Amount".padStart(15,' ');
+
+
+
+        document.getElementById("cart").innerHTML=carttext;
+
+
+
+        document.getElementById("cartfooter").innerHTML=
+
+           "Items bought:"+ cart.length+ "Total Amount:"+ totalamount;
+
+
+
+    }
+
+  
+
+// Global variable
+
+var cart = []; 
+
+
+
+</script>
+
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Archivo+Black&family=Poppins:wght@100;200;300;400;500;600;700;800;900&family=Roboto:wght@400;500;700;900&display=swap');
+  * {
+    font-family: "Poppins";
+}
+
+.inputs {
+  display: flex;
+}
+
+a {
+   text-decoration: none;
+   color: black;
+   font-weight: 900;
+ }
+
+ a:hover {
+   text-decoration: underline
+ }
+
+ button {
+   margin-left: 1rem;
+ }
+
+</style>
+<a href="https://dre-portfolio.github.io/CS-1130/">Back to home</a> 
+</body>
+
+</html>
